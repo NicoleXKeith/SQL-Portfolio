@@ -1,0 +1,54 @@
+CREATE TABLE Icecream_shop (ID Integer primary key, name text, size text, cost integer, quantity integer);
+
+INSERT INTO Icecream_shop VALUES 
+(1, "Pistachio", 'large', 6.00, 9);
+INSERT INTO Icecream_shop VALUES 
+(2, 'Chocolate', 'large', 6.00, 12);
+INSERT INTO Icecream_shop VALUES 
+(3, 'Vanilla', 'large', 5.00, 22);
+INSERT into Icecream_shop VALUES 
+(4, 'Strawberry', 'large', 5.50, 12);
+INSERT INTO Icecream_shop VALUES 
+(5, 'Salted caramel', 'small', 4.00, 17);
+INSERT into Icecream_shop VALUES 
+(6, 'Coffee', 'large', 4.00, 10);
+INSERT INTO Icecream_shop VALUES 
+(7, 'Cookie Dough', 'small', 6.00, 19);
+INSERT into Icecream_shop VALUES 
+(8, 'Butter Pecan', 'small', 6.00, 21);
+INSERT INTO Icecream_shop VALUES 
+(9, 'Birthday cake', 'small', 5.50, 19);
+INSERT into Icecream_shop VALUES 
+(10, 'Rum raisin', 'small', 5.50, 15);
+INSERT INTO Icecream_shop VALUES 
+(11, 'Oreo', 'large', 5.50, 16);
+INSERT into Icecream_shop VALUES 
+(12, 'Butterscotch', 'small', 6.00, 4);
+INSERT INTO Icecream_shop VALUES 
+(13, 'Banana', 'large', 6.00, 19);
+INSERT into Icecream_shop VALUES 
+(14, 'Rocky road', 'small', 5.50, 12);
+INSERT INTO Icecream_shop VALUES 
+(15, 'Mint chocolate chip', 'small', 4.00, 17);
+INSERT into Icecream_shop VALUES 
+(16, 'Peppermint', 'large', 6.00, 12);
+
+
+---Display the database ordered by price---
+SELECT * FROM Icecream_shop
+ORDER BY cost desc
+
+---Which 5 Flavors have the most in inventory?---
+SELECT flavor, cost, quantity
+FROM Icecream_shop
+order by quantity desc
+limit 5; 
+
+---Which flavors cost more than 3.00 and are also small?--
+SELECT * FROM Icecream_shop
+Where cost > 4.00 
+AND size = 'small';
+
+--How many flavors are available in a large?--
+SELECT * FROM Icecream_Shop
+WHERE size = 'large';
